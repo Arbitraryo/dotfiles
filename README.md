@@ -1,5 +1,5 @@
 # dotfiles
-![main](main.png)
+![Main](Main.png)
 
 ## Not updated
 
