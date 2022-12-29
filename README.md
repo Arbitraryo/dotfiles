@@ -1,6 +1,5 @@
 # dotfiles
 ![main](main.png)
-https://cdn.discordapp.com/attachments/927233607725121586/927234035057557614/2022-01-03-001636_1920x1080_scrot.png
 
 ## Not updated
 
