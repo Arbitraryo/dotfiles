@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# SOURCE : https://github.com/mkropat/jumpapp/blob/master/jumpapp
 # Added: - non-exact class matching
 #        - apply tamwm layout on workspace switch
 #        - multi-workspace matching will prioritize current workspace
