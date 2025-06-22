@@ -1,0 +1,66 @@
+# Iconize (minimize) window // Close window w/ Picom flicker workaround
+super + {v,b}
+    {xdotool getactivewindow windowminimize,xdotool getactivewindow windowclose}
+
+super + g
+    wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz; sleep .2; xdotool getactivewindow windowactivate
+
+# Launcher
+super + a
+    gmrun
+
+# Screenshots
+super + s
+    scrot && notify-send "Screenshot taken."
+
+super + shift + @s
+    scrot -s && notify-send "Screenshot taken."
+
+# run or raise (workaround atm)
+super + {p,t,d,s,r,w}
+    app={irc,ncmpcpp,ranger,vivaldi,vim_one,vim2} && jumpapp -f -c "$app" tamwm -l $app
+
+super + q
+    ~/bash_scripts/focus_extra.sh
+
+super + {h,l}
+    tamwm -d {prev,next}
+
+super + {n,e,i,o}
+    tamwm -d {0-3}
+
+super + {1-4}
+    tamwm -d {0-3}
+
+super + shift + {Left,Right,Down,Up}
+    xdotool windowmove --relative -- $(get_parent_wid_of $(xdotool getactivewindow)) {-100 y,100 y,x 100,x -100}
+
+
+#super + Return
+#    /home/sensei/bash_scripts/init.sh
+	
+super + Return
+    xfce4-terminal
+
+
+# minimize
+super + v
+	xdotool windowminimize $(xdotool getactivewindow)
+
+
+# audio control
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+# brightness control
+
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+XF86MonBrightnessDown
+    xbacklight -dec 10
